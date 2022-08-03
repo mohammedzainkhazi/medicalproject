@@ -10,16 +10,23 @@ function SignUp() {
     const navigate = useNavigate();
 
     const signup = async () => {
-        await createUserWithEmailAndPassword(auth,email,pass).then(updateProfile(auth.currentUser, {
-            displayName: uname 
-          }).then(() => {
-            // Profile updated!
-            navigate(`/home/${auth.currentUser.displayName}`, { replace: true });  
-            // ...
-          }).catch((error) => {
-            // An error occurred
-            // ...
-          }));
+        if(uname == null || uname == '' || email == null || email == '' || pass == null || pass == ''){
+            alert('Enter All Fields');
+        }
+        else if(uname.length<3){
+            alert('UserName must be length of atlest 3');
+        }
+        else{
+            await createUserWithEmailAndPassword(auth,email,pass).then(() => {
+                // Profile updated!
+                updateProfile(auth.currentUser, {
+                    displayName: uname 
+                }).then(()=>navigate(`/home/${auth.currentUser.displayName}`, { replace: true }));  
+                // ...
+              }).catch((error) => {
+                alert(error.code +" Some error creating account");
+              });
+        }
     }
     if(auth.currentUser !== null) navigate(`/home/${auth.currentUser.displayName}`, { replace: true });  
     return (

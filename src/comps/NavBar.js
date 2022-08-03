@@ -28,9 +28,9 @@ function NavBar() {
     }, [])
     
     return (
-        <div className='z-100 bg-white shadow-2xl h-[10] fixed w-full mb-[30px]'>
+        <div className='z-100 bg-white shadow-2xl h-[10] fixed w-full'>
             <header className="text-gray-600 body-font h-[10]">
-                <div className="container mx-auto flex flex-wrap justify-evenly p-5 flex-col md:flex-row items-center">
+                <div className="container mx-auto flex flex-wrap justify-evenly p-5 flex-col md:flex-row items-center m-0">
                     <a href="!#" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                         <img src={logo} height={60} width={60} alt="LOGO" />
                         <span className="ml-3 text-[30px]">RMPS</span>
