@@ -6,7 +6,7 @@ import Patient from './Patient'
 function Home() {
     const {uname} = useParams();
     const nav = useNavigate();
-    if(auth.currentUser == null ) nav("/login",{replace:true}) 
+    if(auth.currentUser == null ) nav("/login",{replace:true})
     
     return (
         <div id="HOME" className='pt-20'>

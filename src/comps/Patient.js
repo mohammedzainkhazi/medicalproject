@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Graph from './Graph'
+import { getDatabase, ref, onValue } from "firebase/database";
+
 
 function Patient() {
+
+    const db = getDatabase();
+    const [patients, setpatients] = useState([])
+
+    const fetchData = async () => {
+        let pts = [];
+        const count = ref(db, '/');
+        await onValue(count, (snapshot) => {
+            snapshot.forEach(pst => {
+                const data = pst.val()
+                pts.push({ data })
+            })
+            setpatients(pts);
+        });
+    }
+
+    useEffect(() => {
+        fetchData();
+    })
+
     return (
         <div id="PTN">
             <section className="text-gray-600 body-font">
@@ -30,35 +52,21 @@ function Patient() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td className="px-4 py-3">1</td>
-                                    <td className="px-4 py-3">Elon</td>
-                                    <td className="px-4 py-3">22-02-2002</td>
-                                    <td className="px-4 py-3 text-lg text-gray-900">Excellent</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-3">2</td>
-                                    <td className="px-4 py-3">James</td>
-                                    <td className="px-4 py-3">12-01-2002</td>
-                                    <td className="px-4 py-3 text-lg text-gray-900">Good</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-3">3</td>
-                                    <td className="px-4 py-3">Alex</td>
-                                    <td className="px-4 py-3">10-03-2002</td>
-                                    <td className="px-4 py-3 text-lg text-gray-900">Average</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-3">4</td>
-                                    <td className="px-4 py-3">Zain</td>
-                                    <td className="px-4 py-3">14-04-2002</td>
-                                    <td className="px-4 py-3 text-lg text-gray-900">Excellent</td>
-                                </tr>
-                                
+                                {
+                                    patients.map((pt, i=pt.data.id) => (
+                                        <tr key={i}>
+                                            <td className="px-4 py-3">{i}</td>
+                                            <td className="px-4 py-3">{pt.data.Name}</td>
+                                            <td className="px-4 py-3">{pt.data.Date}</td>
+                                            <td className="px-4 py-3 text-lg text-gray-900">{pt.data.Health_Status}</td>
+                                        </tr>
+                                    ))
+                                }
+
                             </tbody>
                         </table>
                     </div>
-                    <Graph/>
+                    <Graph />
                 </div>
             </section>
         </div>

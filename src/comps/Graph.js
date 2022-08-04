@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CanvasJSReact from './canvasjs.react';
-var CanvasJS = CanvasJSReact.CanvasJS;
+// var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
  
 const Graph = () => {	
@@ -12,7 +12,7 @@ const Graph = () => {
 				text: "Patient Data"
 			},
 			data: [{
-				type: "pie",
+				type: "bar",
 				indexLabel: "{label}: {y}%",		
 				startAngle: 90,
 				dataPoints: [
@@ -27,11 +27,8 @@ const Graph = () => {
 		}
 		
 		return (
-		<div className='mt-20'>
-			<CanvasJSChart options = {options} 
-				/* onRef={ref => this.chart = ref} */
-			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+		<div className='mt-20' id="GRAPH">
+			<CanvasJSChart options = {options}/>
 		</div>
 		);
 	}
