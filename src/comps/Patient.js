@@ -31,37 +31,34 @@ function Patient() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td className="px-4 py-3">Start</td>
-                                    <td className="px-4 py-3">5 Mb/s</td>
-                                    <td className="px-4 py-3">15 GB</td>
-                                    <td className="px-4 py-3 text-lg text-gray-900">Free</td>
-                                    
+                                    <td className="px-4 py-3">1</td>
+                                    <td className="px-4 py-3">Elon</td>
+                                    <td className="px-4 py-3">22-02-2002</td>
+                                    <td className="px-4 py-3 text-lg text-gray-900">Excellent</td>
                                 </tr>
                                 <tr>
-                                    <td className="border-t-2 border-gray-200 px-4 py-3">Pro</td>
-                                    <td className="border-t-2 border-gray-200 px-4 py-3">25 Mb/s</td>
-                                    <td className="border-t-2 border-gray-200 px-4 py-3">25 GB</td>
-                                    <td className="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900">$24</td>
-                                        
+                                    <td className="px-4 py-3">2</td>
+                                    <td className="px-4 py-3">James</td>
+                                    <td className="px-4 py-3">12-01-2002</td>
+                                    <td className="px-4 py-3 text-lg text-gray-900">Good</td>
                                 </tr>
                                 <tr>
-                                    <td className="border-t-2 border-gray-200 px-4 py-3">Business</td>
-                                    <td className="border-t-2 border-gray-200 px-4 py-3">36 Mb/s</td>
-                                    <td className="border-t-2 border-gray-200 px-4 py-3">40 GB</td>
-                                    <td className="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900">$50</td>
-                                    
+                                    <td className="px-4 py-3">3</td>
+                                    <td className="px-4 py-3">Alex</td>
+                                    <td className="px-4 py-3">10-03-2002</td>
+                                    <td className="px-4 py-3 text-lg text-gray-900">Average</td>
                                 </tr>
                                 <tr>
-                                    <td className="border-t-2 border-b-2 border-gray-200 px-4 py-3">Exclusive</td>
-                                    <td className="border-t-2 border-b-2 border-gray-200 px-4 py-3">48 Mb/s</td>
-                                    <td className="border-t-2 border-b-2 border-gray-200 px-4 py-3">120 GB</td>
-                                    <td className="border-t-2 border-b-2 border-gray-200 px-4 py-3 text-lg text-gray-900">$72</td>
-                                   
+                                    <td className="px-4 py-3">4</td>
+                                    <td className="px-4 py-3">Zain</td>
+                                    <td className="px-4 py-3">14-04-2002</td>
+                                    <td className="px-4 py-3 text-lg text-gray-900">Excellent</td>
                                 </tr>
+                                
                             </tbody>
                         </table>
                     </div>
-                    {/* <Graph/> */}
+                    <Graph/>
                 </div>
             </section>
         </div>

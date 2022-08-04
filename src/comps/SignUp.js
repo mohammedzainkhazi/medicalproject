@@ -10,7 +10,7 @@ function SignUp() {
     const navigate = useNavigate();
 
     const signup = async () => {
-        if(uname == null || uname == '' || email == null || email == '' || pass == null || pass == ''){
+        if(uname === null || uname === '' || email === null || email === '' || pass === null || pass === ''){
             alert('Enter All Fields');
         }
         else if(uname.length<3){
