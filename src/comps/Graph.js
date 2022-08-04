@@ -3,7 +3,7 @@ import CanvasJSReact from './canvasjs.react';
 // var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
  
-const Graph = () => {	
+const Graph = (props) => {	
 		const options = {
 			animationEnabled: true,
 			exportEnabled: true,
@@ -12,16 +12,15 @@ const Graph = () => {
 				text: "Patient Data"
 			},
 			data: [{
-				type: "bar",
+				type: props.type,
 				indexLabel: "{label}: {y}%",		
 				startAngle: 90,
 				dataPoints: [
-					{ y: 20, label: "Spo2" },
-					{ y: 24, label: "Heart Beat" },
-					{ y: 20, label: "Blood Pressure" },
-					{ y: 14, label: "Sugar" },
-					{ y: 12, label: "Activities" },
-					{ y: 10, label: "Misc" }	
+					{ y: 15, label: "Oxygen" },
+					{ y: 10, label: "Heart Beat" },
+					{ y: 40, label: "ECG" },
+					{ y: 20, label: "Temperature" },
+					{ y: 15, label: "Blood Pressure"},
 				]
 			}]
 		}

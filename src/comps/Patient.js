@@ -66,7 +66,8 @@ function Patient() {
                             </tbody>
                         </table>
                     </div>
-                    <Graph />
+                    <Graph type="bar" />
+                    <Graph type="pie" />
                 </div>
             </section>
         </div>
